@@ -14,9 +14,12 @@ const collectEmployees = function () {
     while (isNaN(salary)) {
       salary = prompt("Please enter a valid salary:");
     }
+
     employeeData.push({ firstName, lastName, salary });
-    const continueAdding = prompt("Do you want to add another employee?");
-    if (continueAdding.toLowerCase() !== "yes") {
+
+    const continueAdding = confirm("Do you want to add another employee?");
+
+    if (continueAdding === false) {
       addMoreEmployees = false;
     }
   }
